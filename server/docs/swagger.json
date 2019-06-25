@@ -1,0 +1,292 @@
+{ "openapi":"3.0.0",
+    "info":{
+        "title":"CAB230 : Web Computing API",
+        "description":"This is an API based on the CAB230 Web Computing Qld Offences database.",
+        "version":"1.0.0"
+    },
+    "servers":[
+        {
+            "url": "https://localhost"
+        }
+    ],
+    "tags":[
+        {
+          "name":"Authentication"
+        },
+        {
+          "name":"Search"
+        },
+        {
+          "name":"Helpers"
+        }
+    ],
+    "paths":{
+        "/offences":{
+          "get":{
+              "tags":[
+                 "Helpers"
+              ],
+              "summary":"List of all offences",
+              "description":"List of offences to perform searches for",
+              "operationId":"listAllOffences",
+              "produces":[
+                 "application/json"
+              ],
+              "responses":{
+                 "200":{
+                    "description":"OK",
+                    "schema":{
+                       "type":"object",
+                       "properties":{
+                          "offences":{
+                             "type":"array",
+                             "items":{
+                                "type":"object"
+                             }
+                          }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "/areas":{
+          "get":{
+              "tags":[
+                 "Helpers"
+              ],
+              "summary":"List of all areas",
+              "description":"List of areas to perform searches for",
+              "operationId":"listAllAreas",
+              "produces":[
+                 "application/json"
+              ],
+              "responses":{
+                 "200":{
+                    "description":"OK",
+                    "schema":{
+                       "type":"object",
+                       "properties":{
+                          "offences":{
+                             "type":"array",
+                             "items":{
+                                "type":"object"
+                             }
+                          }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "/ages":{
+          "get":{
+              "tags":[
+                 "Helpers"
+              ],
+              "summary":"List of all ages",
+              "description":"List of ages to perform searches for",
+              "operationId":"listAllAges",
+              "produces":[
+                 "application/json"
+              ],
+              "responses":{
+                 "200":{
+                    "description":"OK",
+                    "schema":{
+                       "type":"object",
+                       "properties":{
+                          "offences":{
+                             "type":"array",
+                             "items":{
+                                "type":"object"
+                             }
+                          }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "/genders":{
+          "get":{
+              "tags":[
+                 "Helpers"
+              ],
+              "summary":"List of all genders",
+              "description":"List of genders to perform searches for",
+              "operationId":"listAllGenders",
+              "produces":[
+                 "application/json"
+              ],
+              "responses":{
+                 "200":{
+                    "description":"OK",
+                    "schema":{
+                       "type":"object",
+                       "properties":{
+                          "offences":{
+                             "type":"array",
+                             "items":{
+                                "type":"object"
+                             }
+                          }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "/years":{
+          "get":{
+              "tags":[
+                 "Helpers"
+              ],
+              "summary":"List of all years",
+              "description":"List of years to perform searches for",
+              "operationId":"listAllYears",
+              "produces":[
+                 "application/json"
+              ],
+              "responses":{
+                 "200":{
+                    "description":"OK",
+                    "schema":{
+                       "type":"object",
+                       "properties":{
+                          "offences":{
+                             "type":"array",
+                             "items":{
+                                "type":"object"
+                             }
+                          }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "/search":{
+          "get":{
+              "tags":[
+                 "Search"
+              ],
+              "summary":"",
+              "description":"Search for Offence data",
+              "operationId":"searchOffences",
+              "produces":[
+                 "application/json"
+              ],
+              "parameters":[
+                {
+                  "in": "query",
+                  "name": "offence",
+                  "required": true,
+                  "schema":{
+                    "type": "string"
+                  },
+                  "description": "Name of the Offence to search for"
+                },
+                {
+                  "in": "query",
+                  "name": "area",
+                  "schema":{
+                    "type": "string"
+                  },
+                  "description": "List of comma-separated Areas (LGAs) to filter search results by"
+                },
+                {
+                  "in": "query",
+                  "name": "age",
+                  "schema":{
+                    "type": "string"
+                  },
+                  "description": "List of comma-separated Ages to filter search results by"
+                },
+                {
+                  "in": "query",
+                  "name": "gender",
+                  "schema":{
+                    "type": "string"
+                  },
+                  "description": "List of comma-separated Genders to filter search results by"
+                },
+                {
+                  "in": "query",
+                  "name": "year",
+                  "schema":{
+                    "type": "intager"
+                  },
+                  "description": "List of comma-separated Years to filter search results by"
+                },
+                {
+                  "in": "query",
+                  "name": "month",
+                  "schema":{
+                    "type": "intager",
+                    "minimum": 1,
+                    "maximum": 12
+                  },
+                  "explode": false,
+                  "description": "List of comma-separated Months to filter search results by (1-12)"
+                }
+              ],
+              "responses":{
+                 "200":{
+                    "description":"OK",
+                    "schema":{
+                       "type":"object",
+                       "properties":{
+                          "offences":{
+                             "type":"array",
+                             "items":{
+                                "type":"object"
+                             }
+                          }
+                       }
+                    },
+                    "examples":{
+                      "":{
+                        "query": {
+                          "offence": "Homicide (Murder)"
+                        },
+                        "result": [
+                          {
+                            "LGA": "Aurukun Shire Council",
+                            "total": 4,
+                            "lat": -27.470812,
+                            "lng": 153.022455
+                          }
+                        ]
+                      }
+                    }
+                 },
+                 "400":{
+                   "description":"Bad Request",
+                   "schema":{
+                     "type": "object"
+                   },
+                   "examples":{
+                     "":{
+                       "message": "oops! it looks like you're missing the offence query parm"
+                     }
+                   }
+                 },
+                 "401":{
+                   "description":"Unauthorized",
+                   "schema":{
+                     "type": "object"
+                   },
+                   "examples":{
+                     "":{
+                       "message": "oh no! it looks like your authorization token is invalid..."
+                     }
+                   }
+                 }
+              }
+           }
+        }
+
+
+    }
+}

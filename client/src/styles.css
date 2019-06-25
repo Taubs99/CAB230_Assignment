@@ -1,0 +1,160 @@
+.info {
+  font-family: sans-serif;
+  text-align: center;
+}
+#offences {
+  position: relative;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: aliceblue;
+  text-align: center;
+}
+
+header {
+  background: #006c9a;
+  color: #fff;
+  padding: 10px 30px;
+  height: 75px;
+  max-width: 1500px;
+}
+
+/* HeaderFeatures */
+#title {
+  /* display: inline-block; */
+  float: left;
+  color: #fff;
+  width: 49%;
+  text-align: left;
+}
+
+features__header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.features {
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 100%;
+  max-width: 2000px;
+  margin: 0;
+}
+
+.features__header h2 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: green;
+}
+
+/* Navbar Styling */
+
+#login-div {
+  float: right;
+}
+
+#login-div input[type="password"], input[type="text"] {
+  width: 100px;
+  padding: 6px;
+  margin-right: 3px;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+#login-div button {
+  float: right;
+  padding: 6px;
+  margin-top: 18px;
+  margin-right: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#logout-div {
+  float: right;
+  position: relative;
+  display: none;
+}
+
+#logout-div button {
+  float: right;
+  padding: 6px;
+  margin-top: 18px;
+  margin-right: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#form-popup {
+  background: #006c9a;
+  position: fixed;
+  top: 75px;
+  right: 1%;
+  color: #fff;
+  height: 400px;
+  border: 1px solid aliceblue;
+  border-radius: 3px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  z-index: 9;
+}
+
+#form-container {
+  max-width: 300px;
+  height: 100%;
+  padding: 10px;
+  background-color: #006c9a;
+  text-align: left;
+}
+
+#form-container input[type=text]{
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+#form-container input[type=password]{
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+#filters {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+#filters div {
+  margin-bottom: 3px;
+}
+
+button {
+  color: lightblue;
+  border: 1px solid lightblue;
+  background-color: #006c9a;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Button styling */
+button:hover {
+  background: #444;
+}
+
+#mapid {
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+}
