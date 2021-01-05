@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.21.1",
     "chart.js": "^2.8.0",
     "cors": "^2.8.5",
     "google-map-react": "^1.1.4",
